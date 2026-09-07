@@ -21,7 +21,7 @@ public class LoginPage {
     WebElement loginError;
   /*  @FindBy(className = "title")
     WebElement productTitle;*/
-
+// Login feature changes
     public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
