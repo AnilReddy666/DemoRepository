@@ -51,5 +51,6 @@ public class LoginTest extends BaseTest {
 
         System.out.println("Step 3");
         soft.assertAll();*/
+        // Poll SCM testing
     }
 }
