@@ -4,17 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                // Compile and package the project
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                // Run TestNG + Cucumber tests
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo 'Deploy step goes here'
+                // Example: sh 'scp target/myapp.jar user@server:/deploy'
             }
         }
     }
