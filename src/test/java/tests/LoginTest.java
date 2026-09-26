@@ -23,6 +23,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginTest() throws IOException {
+        System.out.println("LOGIN TEST STARTED");
         loginPage = new LoginPage( driver);
         String username = reader.getUsername();
         String password = reader.getPassword();
@@ -35,7 +36,7 @@ public class LoginTest extends BaseTest {
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getTitle());
         String actual = page.ProductTitle();
-        String expected = "products";
+        String expected = "Products";
         Assert.assertEquals(actual,expected);
         String actualurl = driver.getCurrentUrl();
         Assert.assertTrue(actualurl.contains("inventory.html"));

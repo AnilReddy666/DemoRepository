@@ -36,9 +36,19 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result)  {
         //WebDriver driver = (WebDriver)result.getTestContext().getAttribute("driver");
-        WebDriver driver = DriverFactory.getDriver();
-        String screenshot = ScreenshotUtils.takeScreenshot(driver, result.getName());
-        ExtentReportManager.getTest().addScreenCaptureFromPath(screenshot);
+        WebDriver driver = (WebDriver) result.getTestContext().getAttribute("driver");
+
+        if (driver != null) {
+            try {
+                String screenshot = ScreenshotUtils.takeScreenshot(driver, result.getName());
+                ExtentReportManager.getTest().addScreenCaptureFromPath(screenshot);
+            } catch (Exception e) {
+                System.out.println("Screenshot could not be taken: " + e.getMessage());
+            }
+
+        } else {
+            System.out.println("Driver is null. Screenshot cannot be taken.");
+        }
         ExtentReportManager.getTest().fail("failed Test");
         System.out.println("TestFailure : " + result.getName());
         System.out.println("Browser: "+ result.getThrowable());

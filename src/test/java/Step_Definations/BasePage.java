@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 
 import static Pages.HomePage.click_menu_bar;
 import static Pages.HomePage.validation_text;
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class BasePage {
     @Given(": user is in login page")

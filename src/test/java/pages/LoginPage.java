@@ -37,13 +37,13 @@ public class LoginPage {
        //this.password.sendKeys(password);
         waitUtils.waitforElementvisibility(By.id("password")).sendKeys(password);
     }
-    public ProductPage clickLoginButton(){
+    public pages.ProductPage clickLoginButton(){
       //  this.loginButton.click();
         waitUtils.waitforElementtobeClickable(By.id("login-button")).click();
         System.out.println("After clicking login");
       //  waitUtils.waitforUrlContains("inventory.html");
        // waitUtils.waitfortitleIs("Swag Labs");
-        return new ProductPage(driver);
+        return new pages.ProductPage(driver);
     }
     public  String getLoginErrorMessage(){
         return waitUtils.waitforElementvisibility

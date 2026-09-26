@@ -7,8 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static Utility.BrowserDriver.driver;
-import static org.junit.Assert.assertEquals;
-
+import static org.testng.Assert.assertEquals;
 public class RegistartionFormFilling {
     @When("the user clicks on registration button")
     public void the_user_clicks_on_registration_button() {
