@@ -13,7 +13,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                script {
+                    def mvnHome = tool 'MAVEN_HOME'
+                    bat "\"${mvnHome}\\bin\\mvn.cmd\" test"
+                }
             }
         }
 
