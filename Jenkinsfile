@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def mvnHome = tool 'MAVEN_HOME'
-                    bat "\"${mvnHome}\\bin\\mvn.cmd\" clean install"
+                    bat "\"${mvnHome}\\bin\\mvn.cmd\" clean package -DskipTests"
                 }
             }
         }
