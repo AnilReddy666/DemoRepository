@@ -22,8 +22,11 @@ public class DriverFactory {
 
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
 
             driver.set(new EdgeDriver(options));
+
 
         } else if (browser.equals("chrome")) {
 
