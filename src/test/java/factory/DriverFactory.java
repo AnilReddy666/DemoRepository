@@ -14,7 +14,7 @@ public class DriverFactory {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public WebDriver createDriver() throws IOException {
-        String browser = configreader.getBrowser();
+        String browser = System.getProperty("BROWSER", configreader.getBrowser());
        // WebDriver driver = null;
         if (browser.equals("edge")) {
             driver.set(new EdgeDriver());
