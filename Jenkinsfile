@@ -4,15 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Use bat instead of sh on Windows
-                bat 'mvn clean install'
+                script {
+                    def mvnHome = tool 'MAVEN_HOME'
+                    bat "\"${mvnHome}\\bin\\mvn.cmd\" clean install"
+                }
             }
         }
+
         stage('Test') {
             steps {
                 bat 'mvn test'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploy step goes here'
